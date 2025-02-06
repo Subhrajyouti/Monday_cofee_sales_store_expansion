@@ -1,0 +1,20 @@
+--average sale per custemer in each city
+--Total_revenue_across_all cities
+SELECT  
+        city.city_name,
+        sum(total) as Revenue,
+        Count(DISTINCT sales.customer_id) as customer_per_city,
+         round(sum(total)::numeric/Count(DISTINCT sales.customer_id)::numeric,2) as avg_sale_p_cx_per_city
+
+
+FROM sales
+
+ JOIN     
+    customers AS ct on sales.customer_id=ct.customer_id
+ JOIN    
+    city on ct.city_id=city.city_id
+ 
+GROUP BY
+    city.city_name    
+ORDER BY 
+    Revenue DESC    

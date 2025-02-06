@@ -1,4 +1,0 @@
---average sale per custemer in each city
-SELECT 
-    city.city_name,
-    

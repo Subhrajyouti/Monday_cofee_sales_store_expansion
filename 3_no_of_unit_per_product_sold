@@ -1,0 +1,9 @@
+-- How many units of per product sold
+SELECT products.product_name,
+        count( sales.product_id) as units_sold
+FROM sales
+JOIN 
+    products on sales.product_id = products.product_id
+GROUP BY             
+    products.product_id
+    ORDER BY units_sold desc

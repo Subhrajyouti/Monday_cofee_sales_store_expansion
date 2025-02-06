@@ -1,5 +1,5 @@
 --Total_revenue_across_all cities
-SELECT 
+SELECT  
         city.city_name,
         sum(total) as Revenue
 
